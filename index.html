@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Locação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Locação</h1>
+        <div id="menu">
+            <button onclick="showCadastro()">Cadastrar Cliente</button>
+            <button onclick="gerarNotaFiscal()">Gerar Nota Fiscal</button>
+        </div>
+
+        <div id="cadastro" class="hidden">
+            <h2>Cadastrar Cliente</h2>
+            <form id="formCadastro">
+                <label>Nome: <input type="text" id="nome" required></label><br>
+                <label>CPF: <input type="text" id="cpf" required></label><br>
+                <label>Endereço: <input type="text" id="endereco" required></label><br>
+                <label>Equipamento:
+                    <select id="equipamento" required>
+                        <option value="Betoneira">Betoneira</option>
+                        <option value="Andaime">Andaime</option>
+                        <option value="Compactador">Compactador</option>
+                    </select>
+                </label><br>
+                <label>Valor: <input type="number" id="valor" step="0.01" required></label><br>
+                <label>Quantidade: <input type="number" id="quantidade" required></label><br>
+                <label>Dias Locados: <input type="number" id="diasLocados" required></label><br>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <button onclick="showMenu()">Voltar</button>
+        </div>
+
+        <div id="clientes" class="hidden">
+            <h2>Clientes Cadastrados</h2>
+            <ul id="listaClientes"></ul>
+            <button onclick="showMenu()">Voltar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
